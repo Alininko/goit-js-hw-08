@@ -26,6 +26,10 @@ body {
     height: 100%;
 }
 
+.gallery-link:hover {
+    cursor: url('../img/cursor.png') 16 16, pointer;
+}
+
 .gallery-image {
     display: block;
     width: 100%;

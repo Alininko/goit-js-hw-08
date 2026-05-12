@@ -84,17 +84,14 @@ const html = images.map(({preview, original, description}) =>
 galleryContainer.innerHTML = html;
 
 
-galleryContainer.addEventListener("click", function (event) {
+galleryContainer.addEventListener("click", (event) => {
   event.preventDefault();
 
-  const img = event.target.closest(".gallery-link")?.querySelector("img");
-  if (!img) return;
+  const source = event.target.dataset.source;
 
-  const url = img.dataset.source;
-  console.log(url);
+  if (!source) return;
 
-  const instance = basicLightbox.create(`
-    <img src="${url}" width="800" height="600">
-  `);
-  instance.show();
+  basicLightbox.create(`
+    <img src="${source}" width="800" height="600">
+  `).show();
 });
